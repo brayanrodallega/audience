@@ -1,7 +1,8 @@
 package com.misiontic.audience.controller;
 
 import com.misiontic.audience.entities.Audience;
-import com.misiontic.audience.service.AudienceService;
+import com.misiontic.audience.entities.Message;
+import com.misiontic.audience.service.MessageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -9,21 +10,21 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/Audience")
-public class AudienceController {
+@RequestMapping("/api/Message")
+public class MessageController {
 
     @Autowired
-    private AudienceService audienceService;
+    private MessageService messageService;
 
     @ResponseStatus(HttpStatus.OK)
     @GetMapping("/all")
-    public List<Audience> getAll(){
-        return audienceService.getAll();
+    public List<Message> getAll(){
+        return messageService.getAll();
     }
 
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/save")
-    public void save(@RequestBody Audience audience){
-        audienceService.save(audience);
+    public void save(@RequestBody Message message){
+        messageService.save(message);
     }
 }
