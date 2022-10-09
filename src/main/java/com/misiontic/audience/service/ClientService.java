@@ -54,7 +54,9 @@ public class ClientService {
                 if(client.getMessages() != null){
                     clientAux.get().setMessages(client.getMessages());
                 }
-
+                if(client.getReservations() != null){
+                    clientAux.get().setReservations(client.getReservations());
+                }
                 clientRepository.save(clientAux.get());
                 return clientAux.get();
             }else{

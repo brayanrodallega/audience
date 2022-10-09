@@ -58,7 +58,9 @@ public class AudienceService {
                 if(audience.getMessages() != null){
                     audienceAux.get().setMessages(audience.getMessages());
                 }
-
+                if(audience.getReservations() != null){
+                    audienceAux.get().setReservations(audience.getReservations());
+                }
                 audienceRepository.save(audienceAux.get());
                 return audienceAux.get();
             }else{
