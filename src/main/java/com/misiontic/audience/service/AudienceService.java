@@ -55,6 +55,10 @@ public class AudienceService {
                 if(audience.getCategory() != null){
                     audienceAux.get().setCategory(audience.getCategory());
                 }
+                if(audience.getMessages() != null){
+                    audienceAux.get().setMessages(audience.getMessages());
+                }
+
                 audienceRepository.save(audienceAux.get());
                 return audienceAux.get();
             }else{

@@ -51,6 +51,10 @@ public class ClientService {
                 if(client.getAge() != null){
                     clientAux.get().setAge(client.getAge());
                 }
+                if(client.getMessages() != null){
+                    clientAux.get().setMessages(client.getMessages());
+                }
+
                 clientRepository.save(clientAux.get());
                 return clientAux.get();
             }else{
