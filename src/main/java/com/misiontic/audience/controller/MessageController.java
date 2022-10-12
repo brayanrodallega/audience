@@ -7,7 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import javax.swing.text.html.Option;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/Message")
@@ -26,5 +28,23 @@ public class MessageController {
     @PostMapping("/save")
     public void save(@RequestBody Message message){
         messageService.save(message);
+    }
+
+    @ResponseStatus(HttpStatus.OK)
+    @GetMapping("/{id}")
+    public Optional<Message> getMessage(@PathVariable("id") int id){
+        return messageService.getMessage(id);
+    }
+
+    @ResponseStatus(HttpStatus.CREATED)
+    @PutMapping("/update")
+    public void update(@RequestBody Message message){
+        messageService.save(message);
+    }
+
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable("id") int id){
+        messageService.deleteMessage(id);
     }
 }
