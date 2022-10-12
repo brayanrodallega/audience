@@ -39,7 +39,7 @@ public class MessageController {
     @ResponseStatus(HttpStatus.CREATED)
     @PutMapping("/update")
     public void update(@RequestBody Message message){
-        messageService.save(message);
+        messageService.update(message);
     }
 
     @ResponseStatus(HttpStatus.NO_CONTENT)

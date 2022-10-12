@@ -37,7 +37,7 @@ public class AudienceController {
     @ResponseStatus(HttpStatus.CREATED)
     @PutMapping("/update")
     public void update(@RequestBody Audience audience){
-        audienceService.save(audience);
+        audienceService.update(audience);
     }
 
     @ResponseStatus(HttpStatus.NO_CONTENT)

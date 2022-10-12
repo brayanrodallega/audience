@@ -37,7 +37,7 @@ public class ClientController {
     @ResponseStatus(HttpStatus.CREATED)
     @PutMapping("/update")
     public void update(@RequestBody Client client){
-        clientService.save(client);
+        clientService.update(client);
     }
 
     @ResponseStatus(HttpStatus.NO_CONTENT)
