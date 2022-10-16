@@ -1,6 +1,8 @@
 package com.misiontic.audience.controller;
 
 import com.misiontic.audience.entities.Reservation;
+import com.misiontic.audience.entities.dto.StatusAccount;
+import com.misiontic.audience.entities.dto.TopClient;
 import com.misiontic.audience.service.ReservationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -44,5 +46,23 @@ public class ReservationController {
     @DeleteMapping("/{id}")
     public void delete(@PathVariable("id") int id){
         reservationService.deleteReservation(id);
+    }
+
+    @ResponseStatus(HttpStatus.OK)
+    @GetMapping("/report-dates/{dateOne}/{dateTwo}")
+    public List<Reservation> getDatesReport(@PathVariable("dateOne") String dateOne, @PathVariable("dateTwo") String dateTwo){
+        return reservationService.getDatesReport(dateOne, dateTwo);
+    }
+
+    @ResponseStatus(HttpStatus.OK)
+    @GetMapping("/report-status")
+    public StatusAccount getByStatus(){
+        return reservationService.getReportStatus();
+    }
+
+    @ResponseStatus(HttpStatus.OK)
+    @GetMapping("/report-clients")
+    public List<TopClient> getTopClients(){
+        return reservationService.getTopClients();
     }
 }
