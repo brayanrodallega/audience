@@ -28,8 +28,9 @@ public class Reservation implements Serializable {
     @JsonIgnoreProperties({"reservations","messages"})
     private Client client;
 
-    private String score;
-
+    @OneToOne(cascade = {CascadeType.PERSIST},mappedBy = "reservation")
+    @JsonIgnoreProperties("reservation")
+    private Score score;
 
     public Integer getIdReservation() {
         return idReservation;
@@ -63,14 +64,6 @@ public class Reservation implements Serializable {
         this.status = status;
     }
 
-    public String getScore() {
-        return score;
-    }
-
-    public void setScore(String score) {
-        this.score = score;
-    }
-
     public Audience getAudience() {
         return audience;
     }
@@ -85,5 +78,13 @@ public class Reservation implements Serializable {
 
     public void setClient(Client client) {
         this.client = client;
+    }
+
+    public Score getScore() {
+        return score;
+    }
+
+    public void setScore(Score score) {
+        this.score = score;
     }
 }
