@@ -14,15 +14,15 @@ function getAllCategory() {
             for (i = 0; i < p.length; i++) {
 
                 let card = `<div class="col">
-                                <div class="card">
+                                <div class="card text-bg-danger mb-3">
                                     <div class="card-body">
                                         <h5 class="card-title">${p[i].name}</h5>
                                         <p class="card-text">${p[i].description}</p>
                                     </div>
                                     <div class="card-footer">
                                         <div class="btn-group" role="group">
-                                            <button type="button" class="btn btn-outline-primary" onclick='getCategoryById(${p[i].id})'>Actualizar</button>
-                                            <button type="button" class="btn btn-outline-primary" onclick='deleteCategoryById(${p[i].id})'>Borrar!</button>
+                                            <button type="button" class="btn btn-outline-light" onclick='getCategoryById(${p[i].id})'>Actualizar</button>
+                                            <button type="button" class="btn btn-outline-light" onclick='deleteCategoryById(${p[i].id})'>Borrar!</button>
                                         </div>
                                     </div>
                                 </div>

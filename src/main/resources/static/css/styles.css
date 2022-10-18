@@ -7,3 +7,7 @@
 .updateButtonBR {
     display: none;
 }
+
+body {
+    background-color: whitesmoke;
+}

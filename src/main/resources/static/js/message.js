@@ -62,16 +62,16 @@ function getAllMessage() {
             for (i = 0; i < p.length; i++) {
 
                 let card = `<div class="col">
-                                <div class="card">
+                                <div class="card text-bg-info mb-3">
                                     <div class="card-body">
                                         <h4 class="card-title">Client: ${p[i].client.name}</h4>
-                                        <h5 class="card-subtitle mb-2 text-muted">Audience: ${p[i].audience.name}</h5>
+                                        <h5 class="card-subtitle mb-2 text-dark">Audience: ${p[i].audience.name}</h5>
                                         <p class="card-text">Text: ${p[i].messageText}</p>
                                     </div>
                                     <div class="card-footer">
                                         <div class="btn-group" role="group">
-                                            <button type="button" class="btn btn-outline-primary" onclick='getMessageById(${p[i].idMessage})'>Actualizar</button>
-                                            <button type="button" class="btn btn-outline-primary" onclick='deleteMessageById(${p[i].idMessage})'>Borrar!</button>
+                                            <button type="button" class="btn btn-outline-dark" onclick='getMessageById(${p[i].idMessage})'>Actualizar</button>
+                                            <button type="button" class="btn btn-outline-dark" onclick='deleteMessageById(${p[i].idMessage})'>Borrar!</button>
                                         </div>
                                     </div>
                                 </div>
