@@ -40,18 +40,18 @@ function getAllAudience() {
                 for (i = 0; i < p.length; i++) {
 
                     let card = `<div class="col">
-                                    <div class="card">
+                                    <div class="card text-bg-primary mb-3">
                                         <div class="card-header">Categoria: ${p[i].category.name}</div>
                                         <div class="card-body">
                                             <h4 class="card-title">${p[i].name}</h4>
-                                            <h5 class="card-subtitle mb-2 text-muted">Owner: ${p[i].owner}</h5>
-                                            <h6 class="card-subtitle mb-2 text-muted">Capacity: ${p[i].capacity}</h6>
+                                            <h5 class="card-subtitle mb-2 text-light">Owner: ${p[i].owner}</h5>
+                                            <h6 class="card-subtitle mb-2 text-light">Capacity: ${p[i].capacity}</h6>
                                             <p class="card-text">${p[i].description}</p>
                                         </div>
                                         <div class="card-footer">
                                             <div class="btn-group" role="group">
-                                                <button type="button" class="btn btn-outline-primary" onclick='getAudienceById(${p[i].id})'>Actualizar</button>
-                                                <button type="button" class="btn btn-outline-primary" onclick='deleteAudienceById(${p[i].id})'>Borrar!</button>
+                                                <button type="button" class="btn btn-outline-light" onclick='getAudienceById(${p[i].id})'>Actualizar</button>
+                                                <button type="button" class="btn btn-outline-light" onclick='deleteAudienceById(${p[i].id})'>Borrar!</button>
                                             </div>
                                         </div>
                                     </div>
@@ -74,7 +74,7 @@ function getAudienceData() {
     let aud = {
         id: parseInt($("#idAudience").val()),
         owner: $("#ownerAudience").val(),
-        capacity: $("#capacityAudience").val(),
+        capacity: parseInt($("#capacityAudience").val()),
         name: $("#nameAudience").val(),
         description: $("#descriptionAudience").val(),
         category: {id: parseInt($("#category_id").val())}
@@ -152,12 +152,12 @@ function cancelUpdateAudience() {
 function updateAudience() {
 
     let aud = getAudienceData();
+    let dataToSend = JSON.stringify(aud);
 
     $.ajax({
         url: "api/Audience/update",
         type: "PUT",
-        dataType: 'JSON',
-        data: JSON.stringify(aud),
+        data: dataToSend,
         contentType: "application/json",
         success: function (p) {
             console.log(p);

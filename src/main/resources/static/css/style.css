@@ -1,0 +1,93 @@
+/*html {*/
+/*    box-sizing: border-box;*/
+/*    font-size: 62.5%;*/
+/*}*/
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background: url(/assets/interiores-en-auditorios.png) no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+    backdrop-filter: blur(3px);
+}
+
+#navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 3.5rem;
+    width: 100%;
+    padding: 0;
+    position: fixed;
+    z-index: 11;
+    background-color: #09162A;
+}
+
+/*#navbar ul {*/
+/*    padding: 0;*/
+/*    list-style: none;*/
+/*}*/
+
+/*#navbar ul li {*/
+/*    margin-bottom: 1rem;*/
+/*    display: inline;*/
+/*}*/
+
+#navbar h1 a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0 1rem;
+    transition: 0.5s ease-in-out;
+}
+
+#navbar h1 a:hover {
+    color: #fff;
+}
+
+.container-main {
+    min-height: 90vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+}
+
+.card {
+    width: 30rem;
+    height: 30rem;
+    margin: 1rem;
+    border-radius: 1rem;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
+    transition: 0.5s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.1);
+}
+
+.card-link {
+    text-decoration: none;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+    background-color: #09162A;
+    color: white;
+}

@@ -14,7 +14,7 @@ function getAllClient() {
                 for (i = 0; i < p.length; i++) {
 
                     let card = `<div class="col">
-                                    <div class="card">
+                                    <div class="card text-bg-warning mb-3">
                                         <div class="card-body">
                                             <h4 class="card-title">${p[i].name}</h4>
                                             <h6 class="card-text">Edad: ${p[i].age}</h6>
@@ -22,8 +22,8 @@ function getAllClient() {
                                         </div>
                                         <div class="card-footer">
                                             <div class="btn-group" role="group">
-                                                <button type="button" class="btn btn-outline-primary" onclick='getClientById(${p[i].idClient})'>Actualizar</button>
-                                                <button type="button" class="btn btn-outline-primary" onclick='deleteClientById(${p[i].idClient})'>Borrar!</button>
+                                                <button type="button" class="btn btn-outline-dark" onclick='getClientById(${p[i].idClient})'>Actualizar</button>
+                                                <button type="button" class="btn btn-outline-dark" onclick='deleteClientById(${p[i].idClient})'>Borrar!</button>
                                             </div>
                                         </div>
                                     </div>

@@ -14,7 +14,7 @@ function getAllAdmin() {
                 for (i = 0; i < p.length; i++) {
 
                     let card = `<div class="col">
-                                    <div class="card">
+                                    <div class="card text-bg-dark mb-3">
                                         <div class="card-body">
                                             <h4 class="card-title">${p[i].name}</h4>
                                             <h6 class="card-text">Edad: ${p[i].age}</h6>
@@ -22,8 +22,8 @@ function getAllAdmin() {
                                         </div>
                                         <div class="card-footer">
                                             <div class="btn-group" role="group">
-                                                <button type="button" class="btn btn-outline-primary" onclick='getAdminById(${p[i].idAdmin})'>Actualizar</button>
-                                                <button type="button" class="btn btn-outline-primary" onclick='deleteAdminById(${p[i].idAdmin})'>Borrar!</button>
+                                                <button type="button" class="btn btn-outline-light" onclick='getAdminById(${p[i].idAdmin})'>Actualizar</button>
+                                                <button type="button" class="btn btn-outline-light" onclick='deleteAdminById(${p[i].idAdmin})'>Borrar!</button>
                                             </div>
                                         </div>
                                     </div>
